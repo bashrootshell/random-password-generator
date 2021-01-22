@@ -21,4 +21,4 @@ ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!#*%$@:;.?'
 
 randompassword = ''.join(choice(char) for _ in range(20))
 
-print(f'Password chosen with 20 characters >> "{randompassword}"')
+print(f'Chosen password with 20 characters >> "{randompassword}"')
