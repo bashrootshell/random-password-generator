@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
 
 from secrets import choice
+from random import sample
 
 """
     Random Password Generator v2 > cleaner code in Python3
-    It now uses secrets in preference to random,
-    according to the newest recommendations...
-    (although the SystemRandom class is implemented
-    by simply importing this module from random.)
+    It uses secrets (best for CSPRNG) and random modules,
+    according to the newest recommendations.
     Use secrets.choice instead of random.choice for
     cryptographically secure implementations.
 
@@ -19,6 +18,8 @@ from secrets import choice
 char = 'abcdefghijklmnopqrstuvwxyz\
 ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!#*%$@:;._-~+?[]()<>/|=^'
 
-[randompassword := ''.join(choice(char) for _ in range(20))]
+[randompassword1 := ''.join(choice(char) for _ in range(20))]
+[randompassword2 := ''.join(sample(char, 20))]
 
-print(f'Chosen password with 20 characters >> "{randompassword}"')
+print(f'Chosen password with 20 characters (secrets)>> "{randompassword1}"')
+print(f'Chosen password with 20 characters (sample)>> "{randompassword2}"')
