@@ -17,8 +17,8 @@ from secrets import choice
 """
 
 char = 'abcdefghijklmnopqrstuvwxyz\
-ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!#*%$@:;.?'
+ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!#*%$@:;._-~+?[]()<>/|=^'
 
-randompassword = ''.join(choice(char) for _ in range(20))
+[randompassword := ''.join(choice(char) for _ in range(20))]
 
 print(f'Chosen password with 20 characters >> "{randompassword}"')
